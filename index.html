@@ -1,46 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Web</title>
-    <link rel="stylesheet" href="./style_index.css" />
-    <style>
-       body {
-        background-color: aliceblue;
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-       }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-       h1 {
-        color: royalblue;
-        font-size: 2rem;
-        font-family: 'Times New Roman', Times, serif;
-       }
-    </style>
-</head>
-<body>
-    <h1>Nikolay Marzakov's Portfolio</h1>
-    <h2>Welcome to my first HTML page.</h2>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Nikolay Marzakov's Portfolio</title>
+   
+  </head>
+  <body>
+    <header>
+        <div class="navbar">
+            <div class="logo"><a href="">Nikolay Marzakov</a> </div>
+            <ul class="links">
+                <li><a href="hero">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
+            <a href="#" class="action_btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="hero">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="contact">Contact</a></li>
+                <li> <a href="#" class="action_btn">Get Started</a></li>
+        </div>
+
+        </header>
+
+        <main>
+            <section id="hero">
+                <h1>Welcome</h1>
+                <p>This page is under construction </p>
+            </section>
+        </main>
+
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                    ? 'fa-solid fa-xmark'
+                    : 'fa-solid fa-bars'
+
+            }
+        </script>
     
-    <hr />
-    <img src="./assets/images/me.jpg" width="200" height="200">
-    <hr />
-
-    <h2>
-        <a href="https://github.com/nvmarzakov/Python/tree/main/Projects">Python Projects</a>
-        <a href="./projects.html">HTML Projects</a>      
-    </h2>
-
-    <a href="https://github.com/nvmarzakov/Python/tree/main/Projects"><img src="./assets/images/opengraph-icon-200x200.png", width="160"/></a>
-    <a href="./projects.html"><img src="./assets/images/html_pic.png", width="160", height="160" /></a>
-    <hr />
-    
-    <h4 id="center">
-        <a href="./Capstone Project 1 - Online Resume/index.html">About Me</a>
-        <a href="./Capstone Project 1 - Online Resume/public/contact.html">Contacts</a>
-    </h4>
-
-
-</body>
+  </body>
 </html>
